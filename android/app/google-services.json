@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "654116037070",
+    "firebase_url": "https://farmiot-47d0d-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "farmiot-47d0d",
+    "storage_bucket": "farmiot-47d0d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:654116037070:android:e2af77d00a644b6bc7cb9f",
+        "android_client_info": {
+          "package_name": "com.example.farm_iot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "654116037070-m8stif77l9e1vglehtl65ov7pubmv0ve.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRuTRx7QlsRb5DOgfspBXQZUdT9s0yASU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "654116037070-m8stif77l9e1vglehtl65ov7pubmv0ve.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
