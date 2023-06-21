@@ -263,7 +263,9 @@ class _InformationsState extends State<Informations> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ข้อมูลระบบเกษตรอัจฉริยะ'),
+        title: Text(
+          'ข้อมูลระบบเกษตรอัจฉริยะ',
+        ),
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(10),
@@ -273,7 +275,17 @@ class _InformationsState extends State<Informations> {
               Container(
                 width: 500,
                 height: 230,
-                color: Color.fromARGB(255, 24, 223, 24),
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      Color.fromARGB(255, 63, 226, 31),
+                      Color.fromARGB(255, 247, 226, 110)
+                    ],
+                  ),
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                ),
                 child: Column(
                   children: [
                     InkWell(
@@ -285,13 +297,12 @@ class _InformationsState extends State<Informations> {
                                   pump_veg: _pump_veg, auto_veg: _auto_veg),
                             ));
                       },
-                      splashColor: Color.fromARGB(255, 135, 190, 163),
+                      splashColor: Color.fromARGB(255, 177, 202, 163),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: <Widget>[
                           ListTile(
-                            leading:
-                                Image.asset('image/app_image/homepage.png'),
+                            leading: Image.asset('image/app_image/veg.png'),
                             title: Text(
                               'ระบบแปลงผัก',
                               style: TextStyle(fontSize: 30),
@@ -314,17 +325,13 @@ class _InformationsState extends State<Informations> {
                             textColor: Color.fromARGB(255, 0, 0, 0),
                           ),
                           ListTile(
-                              title: Text(
-                                'ระบบอัตโนมัติ : $status_vegetable',
-                                textAlign: TextAlign.start,
-                                style: TextStyle(fontSize: 20),
-                              ),
-                              textColor: Color.fromARGB(255, 0, 0, 0),
-                              trailing: Image.asset(
-                                'image/app_image/setting.png',
-                                height: 100,
-                                width: 100,
-                              )),
+                            title: Text(
+                              'ระบบอัตโนมัติ : $status_vegetable',
+                              textAlign: TextAlign.start,
+                              style: TextStyle(fontSize: 20),
+                            ),
+                            textColor: Color.fromARGB(255, 0, 0, 0),
+                          ),
                         ],
                       ),
                     ),
@@ -334,8 +341,18 @@ class _InformationsState extends State<Informations> {
               SizedBox(height: 10),
               Container(
                 width: 500,
-                height: 170,
-                color: Color.fromARGB(255, 227, 230, 108),
+                height: 230,
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      Color.fromARGB(255, 5, 124, 31),
+                      Color.fromARGB(255, 247, 226, 110)
+                    ],
+                  ),
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                ),
                 child: Column(
                   children: [
                     InkWell(
@@ -353,7 +370,7 @@ class _InformationsState extends State<Informations> {
                         children: <Widget>[
                           ListTile(
                             leading:
-                                Image.asset('image/app_image/homepage.png'),
+                                Image.asset('image/app_image/mushroom.png'),
                             title: Text(
                               'ระบบโรงเพาะเห็ด',
                               style: TextStyle(fontSize: 30),
@@ -368,17 +385,13 @@ class _InformationsState extends State<Informations> {
                             textColor: Color.fromARGB(255, 0, 0, 0),
                           ),
                           ListTile(
-                              title: Text(
-                                'ระบบอัตโนมัติ : $status_mushroom',
-                                textAlign: TextAlign.start,
-                                style: TextStyle(fontSize: 20),
-                              ),
-                              textColor: Color.fromARGB(255, 0, 0, 0),
-                              trailing: Image.asset(
-                                'image/app_image/setting.png',
-                                height: 100,
-                                width: 100,
-                              )),
+                            title: Text(
+                              'ระบบอัตโนมัติ : $status_mushroom',
+                              textAlign: TextAlign.start,
+                              style: TextStyle(fontSize: 20),
+                            ),
+                            textColor: Color.fromARGB(255, 0, 0, 0),
+                          ),
                         ],
                       ),
                     ),
@@ -388,8 +401,18 @@ class _InformationsState extends State<Informations> {
               SizedBox(height: 10),
               Container(
                 width: 500,
-                height: 170,
-                color: Color.fromARGB(255, 241, 75, 53),
+                height: 230,
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      Color.fromARGB(255, 226, 20, 20),
+                      Color.fromARGB(255, 247, 226, 110)
+                    ],
+                  ),
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                ),
                 child: Column(
                   children: [
                     InkWell(
@@ -406,8 +429,7 @@ class _InformationsState extends State<Informations> {
                         mainAxisSize: MainAxisSize.max,
                         children: <Widget>[
                           ListTile(
-                            leading:
-                                Image.asset('image/app_image/homepage.png'),
+                            leading: Image.asset('image/app_image/chicken.png'),
                             title: Text(
                               'ระบบโรงเลี้ยงไก่',
                               style: TextStyle(fontSize: 30),
@@ -422,17 +444,13 @@ class _InformationsState extends State<Informations> {
                             textColor: Color.fromARGB(255, 0, 0, 0),
                           ),
                           ListTile(
-                              title: Text(
-                                'ระบบอัตโนมัติ : $status_chicken',
-                                textAlign: TextAlign.start,
-                                style: TextStyle(fontSize: 20),
-                              ),
-                              textColor: Color.fromARGB(255, 0, 0, 0),
-                              trailing: Image.asset(
-                                'image/app_image/setting.png',
-                                height: 100,
-                                width: 100,
-                              )),
+                            title: Text(
+                              'ระบบอัตโนมัติ : $status_chicken',
+                              textAlign: TextAlign.start,
+                              style: TextStyle(fontSize: 20),
+                            ),
+                            textColor: Color.fromARGB(255, 0, 0, 0),
+                          ),
                         ],
                       ),
                     ),
@@ -442,8 +460,18 @@ class _InformationsState extends State<Informations> {
               SizedBox(height: 10),
               Container(
                 width: 500,
-                height: 170,
-                color: Color.fromARGB(255, 28, 102, 240),
+                height: 230,
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      Color.fromARGB(255, 50, 53, 230),
+                      Color.fromARGB(255, 247, 226, 110)
+                    ],
+                  ),
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                ),
                 child: Column(
                   children: [
                     InkWell(
@@ -460,8 +488,7 @@ class _InformationsState extends State<Informations> {
                         mainAxisSize: MainAxisSize.max,
                         children: <Widget>[
                           ListTile(
-                            leading:
-                                Image.asset('image/app_image/homepage.png'),
+                            leading: Image.asset('image/app_image/fish.png'),
                             title: Text(
                               'ระบบบ่อเลี้ยงปลา',
                               style: TextStyle(fontSize: 30),
@@ -476,17 +503,18 @@ class _InformationsState extends State<Informations> {
                             textColor: Color.fromARGB(255, 0, 0, 0),
                           ),
                           ListTile(
-                              title: Text(
-                                'ระบบอัตโนมัติ : $status_fish',
-                                textAlign: TextAlign.start,
-                                style: TextStyle(fontSize: 20),
-                              ),
-                              textColor: Color.fromARGB(255, 0, 0, 0),
-                              trailing: Image.asset(
-                                'image/app_image/setting.png',
-                                height: 100,
-                                width: 100,
-                              )),
+                            title: Text(
+                              'ระบบอัตโนมัติ : $status_fish',
+                              textAlign: TextAlign.start,
+                              style: TextStyle(fontSize: 20),
+                            ),
+                            textColor: Color.fromARGB(255, 0, 0, 0),
+                            // trailing: Image.asset(
+                            //   'image/app_image/setting.png',
+                            //   height: 100,
+                            //   width: 100,
+                            // )
+                          ),
                         ],
                       ),
                     ),

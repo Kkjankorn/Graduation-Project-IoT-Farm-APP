@@ -181,7 +181,7 @@ class _Page3State extends State<Page3> {
                         RangePointer(
                             value: b,
                             width: 20,
-                            color: Color.fromARGB(255, 201, 52, 41),
+                            color: Color.fromARGB(255, 14, 158, 14),
                             enableAnimation: true,
                             cornerStyle: CornerStyle.bothCurve)
                       ],

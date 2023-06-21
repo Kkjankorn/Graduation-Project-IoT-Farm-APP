@@ -201,7 +201,7 @@ class _Page1State extends State<Page1> {
 
   @override
   Widget build(BuildContext context) {
-    double? a = double.parse(soil_moisture);
+    double a = double.parse(soil_moisture);
     return Scaffold(
         appBar: AppBar(
           title: const Text('ระบบแปลงผัก'),

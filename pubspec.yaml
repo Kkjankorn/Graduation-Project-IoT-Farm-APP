@@ -78,6 +78,11 @@ flutter:
   assets:
     - image/app_image/homepage.png
     - image/app_image/setting.png
+    - image/app_image/veg.png
+    - image/app_image/mushroom.png
+    - image/app_image/chicken.png
+    - image/app_image/fish.png
+    
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
