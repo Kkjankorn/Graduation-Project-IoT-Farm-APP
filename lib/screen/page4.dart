@@ -1,6 +1,5 @@
 // ignore_for_file: deprecated_member_use
 import 'dart:async';
-
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_button/animated_button.dart';
@@ -42,7 +41,7 @@ class _Page4State extends State<Page4> {
       value = true;
       databaseRef.child('farmapp/fish').update({'times': secound_out});
       databaseRef.child('farmapp/fish').update({'value': value});
-      Future.delayed(Duration(seconds: 5), () {
+      Future.delayed(Duration(seconds: 7), () {
         databaseRef.child('farmapp/fish').update({'value': false});
         // code to be executed after 2 seconds
       });

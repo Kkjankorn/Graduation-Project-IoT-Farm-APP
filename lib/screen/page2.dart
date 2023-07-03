@@ -37,7 +37,7 @@ class _Page2State extends State<Page2> {
       value = true;
       databaseRef.child('farmapp/mushroom').update({'sethum': hum_out});
       databaseRef.child('farmapp/mushroom').update({'value': value});
-      Future.delayed(Duration(seconds: 5), () {
+      Future.delayed(Duration(seconds: 7), () {
         databaseRef.child('farmapp/mushroom').update({'value': false});
         // code to be executed after 2 seconds
       });

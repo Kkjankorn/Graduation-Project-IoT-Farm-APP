@@ -91,7 +91,7 @@ class _Page1State extends State<Page1> {
           .child('farmapp/vegetable')
           .update({'stopm': minutes_out_stop});
       databaseRef.child('farmapp/vegetable').update({'value': value});
-      Future.delayed(Duration(seconds: 5), () {
+      Future.delayed(Duration(seconds: 7), () {
         databaseRef.child('farmapp/vegetable').update({'value': false});
         // code to be executed after 2 seconds
       });
