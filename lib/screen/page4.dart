@@ -129,7 +129,7 @@ class _Page4State extends State<Page4> {
 
   @override
   Widget build(BuildContext context) {
-    double b = double.parse(secound_in);
+    var b = double.parse(secound_in, (source) => -1);
     return Scaffold(
       appBar: AppBar(
         title: const Text('ระบบบ่อเลี้ยงปลา'),

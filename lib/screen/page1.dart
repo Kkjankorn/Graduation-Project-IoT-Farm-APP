@@ -200,7 +200,7 @@ class _Page1State extends State<Page1> {
 
   @override
   Widget build(BuildContext context) {
-    double a = double.parse(soil_moisture);
+    var a = double.parse(soil_moisture, (source) => -1);
     return Scaffold(
         appBar: AppBar(
           title: const Text('ระบบแปลงผัก'),
@@ -261,7 +261,7 @@ class _Page1State extends State<Page1> {
                           axisLineStyle: AxisLineStyle(thickness: 20),
                           pointers: <GaugePointer>[
                             RangePointer(
-                                value: a,
+                                value: a.toDouble(),
                                 width: 20,
                                 color: Color.fromARGB(255, 14, 158, 14),
                                 enableAnimation: true,

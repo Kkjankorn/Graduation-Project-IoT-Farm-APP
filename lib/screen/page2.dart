@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_button/animated_button.dart';
@@ -114,7 +116,8 @@ class _Page2State extends State<Page2> {
 
   @override
   Widget build(BuildContext context) {
-    double a = double.parse(humidity);
+    //double a = double.parse(humidity);
+    var a = double.parse(humidity, (source) => -1);
     return Scaffold(
       appBar: AppBar(
         title: const Text('ระบบโรงเพาะเห็ด'),
