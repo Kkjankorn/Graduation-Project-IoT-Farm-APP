@@ -254,9 +254,9 @@ class _Page3State extends State<Page3> {
                 ),
                 Visibility(
                   visible: !auto_chic,
-                  maintainSize: true, //NEW
-                  maintainAnimation: true, //NEW
-                  maintainState: true, //NEW
+                  maintainSize: true,
+                  maintainAnimation: true,
+                  maintainState: true,
                   child: LiteRollingSwitch(
                     value: widget.pump_chic,
                     textOn: "ON",

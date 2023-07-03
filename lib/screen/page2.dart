@@ -210,9 +210,9 @@ class _Page2State extends State<Page2> {
                 ),
                 Visibility(
                   visible: !auto_mush,
-                  maintainSize: true, //NEW
-                  maintainAnimation: true, //NEW
-                  maintainState: true, //NEW
+                  maintainSize: true,
+                  maintainAnimation: true,
+                  maintainState: true,
                   child: LiteRollingSwitch(
                     value: widget.pump_mush,
                     textOn: "ON",

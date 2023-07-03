@@ -254,9 +254,9 @@ class _Page4State extends State<Page4> {
                 ),
                 Visibility(
                   visible: !auto_fish,
-                  maintainSize: true, //NEW
-                  maintainAnimation: true, //NEW
-                  maintainState: true, //NEW
+                  maintainSize: true,
+                  maintainAnimation: true,
+                  maintainState: true,
                   child: LiteRollingSwitch(
                     value: widget.pump_fish,
                     textOn: "ON",
