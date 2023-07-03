@@ -40,6 +40,7 @@ class _Page3State extends State<Page3> {
     setState(() {
       auto_chic = !auto_chic;
       databaseRef.child('farmapp/chicken').update({'auto': auto_chic});
+      databaseRef.child('farmapp/chicken').update({'pump': false});
     });
   }
 
@@ -153,13 +154,12 @@ class _Page3State extends State<Page3> {
                       colorOn: Colors.green,
                       iconOn: Icons.done,
                       iconOff: Icons.do_disturb_off_outlined,
+                      animationDuration: Duration(milliseconds: 150),
                       textSize: 18,
                       onChanged: (statusPump) async {},
                       onDoubleTap: (bool positon) {},
                       onTap: () {
-                        setState(() {
-                          autoButton();
-                        });
+                        autoButton();
                       },
                       onSwipe: () {},
                     ),
@@ -265,6 +265,7 @@ class _Page3State extends State<Page3> {
                     colorOn: Colors.green,
                     iconOn: Icons.done,
                     iconOff: Icons.do_disturb_off_outlined,
+                    animationDuration: Duration(milliseconds: 150),
                     textSize: 18,
                     onChanged: (statuspump) {},
                     onDoubleTap: (bool positon) {},

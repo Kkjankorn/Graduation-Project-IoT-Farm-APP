@@ -53,6 +53,7 @@ class _Page4State extends State<Page4> {
     setState(() {
       auto_fish = !auto_fish;
       databaseRef.child('farmapp/fish').update({'auto': auto_fish});
+      databaseRef.child('farmapp/fish').update({'pump': false});
     });
   }
 
@@ -153,13 +154,12 @@ class _Page4State extends State<Page4> {
                       colorOn: Colors.green,
                       iconOn: Icons.done,
                       iconOff: Icons.do_disturb_off_outlined,
+                      animationDuration: Duration(milliseconds: 150),
                       textSize: 18,
                       onChanged: (statusPump) async {},
                       onDoubleTap: (bool positon) {},
                       onTap: () {
-                        setState(() {
-                          autoButton();
-                        });
+                        autoButton();
                       },
                       onSwipe: () {},
                     ),
@@ -265,6 +265,7 @@ class _Page4State extends State<Page4> {
                     colorOn: Colors.green,
                     iconOn: Icons.done,
                     iconOff: Icons.do_disturb_off_outlined,
+                    animationDuration: Duration(milliseconds: 150),
                     textSize: 18,
                     onChanged: (statuspump) {},
                     onDoubleTap: (bool positon) {},

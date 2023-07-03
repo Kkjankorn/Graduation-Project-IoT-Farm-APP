@@ -48,6 +48,7 @@ class _Page2State extends State<Page2> {
     setState(() {
       auto_mush = !auto_mush;
       databaseRef.child('farmapp/mushroom').update({'auto': auto_mush});
+      databaseRef.child('farmapp/mushroom').update({'pump': false});
     });
   }
 
@@ -137,13 +138,12 @@ class _Page2State extends State<Page2> {
                       colorOn: Colors.green,
                       iconOn: Icons.done,
                       iconOff: Icons.do_disturb_off_outlined,
+                      animationDuration: Duration(milliseconds: 150),
                       textSize: 18,
                       onChanged: (statusPump) async {},
                       onDoubleTap: (bool positon) {},
                       onTap: () {
-                        setState(() {
-                          autoButton();
-                        });
+                        autoButton();
                       },
                       onSwipe: () {},
                     ),
@@ -221,6 +221,7 @@ class _Page2State extends State<Page2> {
                     colorOn: Colors.green,
                     iconOn: Icons.done,
                     iconOff: Icons.do_disturb_off_outlined,
+                    animationDuration: Duration(milliseconds: 150),
                     textSize: 18,
                     onChanged: (statuspump) {},
                     onDoubleTap: (bool positon) {},

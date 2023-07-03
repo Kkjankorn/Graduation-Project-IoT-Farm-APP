@@ -55,13 +55,6 @@ class _Page1State extends State<Page1> {
       auto_veg = !auto_veg;
       databaseRef.child('farmapp/vegetable').update({'auto': auto_veg});
       databaseRef.child('farmapp/vegetable').update({'pump': false});
-      if (pump_veg == true) {
-        setState(() {
-          pump_button = false;
-        });
-      } else {
-        pump_button = false;
-      }
     });
   }
 
@@ -232,13 +225,12 @@ class _Page1State extends State<Page1> {
                           iconOn: Icons.done,
                           iconOff: Icons.do_disturb_off_outlined,
                           textSize: 18,
-                          onChanged: (statusPump) async {},
-                          onDoubleTap: (bool positon) {},
-                          onTap: () {
-                            setState(() {
-                              autoButton();
-                            });
+                          animationDuration: Duration(milliseconds: 150),
+                          onChanged: (pump_veg) async {
+                            autoButton();
                           },
+                          onDoubleTap: (bool positon) {},
+                          onTap: () {},
                           onSwipe: () {},
                         ),
                         SizedBox(height: 10.0),
@@ -310,20 +302,19 @@ class _Page1State extends State<Page1> {
                       maintainAnimation: true,
                       maintainState: true,
                       child: LiteRollingSwitch(
-                        value: pump_button,
+                        value: widget.pump_veg,
                         textOn: "ON",
                         textOff: "OFF",
                         colorOff: Colors.red,
                         colorOn: Colors.green,
                         iconOn: Icons.done,
                         iconOff: Icons.do_disturb_off_outlined,
+                        animationDuration: Duration(milliseconds: 150),
                         textSize: 18,
                         onChanged: (statusPump) async {},
                         onDoubleTap: (bool positon) {},
                         onTap: () {
-                          setState(() {
-                            pumpButton();
-                          });
+                          pumpButton();
                         },
                         onSwipe: (bool positon) {},
                       ),
