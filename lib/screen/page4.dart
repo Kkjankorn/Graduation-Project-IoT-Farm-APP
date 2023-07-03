@@ -56,17 +56,15 @@ class _Page4State extends State<Page4> {
     });
   }
 
-  void _toggleon() {
+  void pumpButton() {
     setState(() {
-      statuspump = 'ON';
-      databaseRef.child('farmapp/fish').update({'pump': 1});
-    });
-  }
-
-  void _toggleoff() {
-    setState(() {
-      statuspump = 'OFF';
-      databaseRef.child('farmapp/fish').update({'pump': 0});
+      pump_fish = !pump_fish;
+      databaseRef.child('farmapp/fish').update({'pump': pump_fish});
+      if (pump_fish == true) {
+        statuspump = 'ON';
+      } else {
+        statuspump = 'OFF';
+      }
     });
   }
 
@@ -254,31 +252,27 @@ class _Page4State extends State<Page4> {
                 SizedBox(
                   height: 20,
                 ),
-                LiteRollingSwitch(
-                  value: widget.pump_fish,
-                  textOn: "ON",
-                  textOff: "OFF",
-                  colorOff: Colors.red,
-                  colorOn: Colors.green,
-                  iconOn: Icons.done,
-                  iconOff: Icons.do_disturb_off_outlined,
-                  textSize: 18,
-                  onChanged: (statuspump) {},
-                  onDoubleTap: (bool positon) {},
-                  onTap: () {
-                    setState(() {
-                      pump_fish = !pump_fish;
-                      databaseRef
-                          .child('farmapp/fish')
-                          .update({'pump': pump_fish});
-                      if (pump_fish == true) {
-                        statuspump = 'ON';
-                      } else {
-                        statuspump = 'OFF';
-                      }
-                    });
-                  },
-                  onSwipe: (statuspump) {},
+                Visibility(
+                  visible: !auto_fish,
+                  maintainSize: true, //NEW
+                  maintainAnimation: true, //NEW
+                  maintainState: true, //NEW
+                  child: LiteRollingSwitch(
+                    value: widget.pump_fish,
+                    textOn: "ON",
+                    textOff: "OFF",
+                    colorOff: Colors.red,
+                    colorOn: Colors.green,
+                    iconOn: Icons.done,
+                    iconOff: Icons.do_disturb_off_outlined,
+                    textSize: 18,
+                    onChanged: (statuspump) {},
+                    onDoubleTap: (bool positon) {},
+                    onTap: () {
+                      pumpButton();
+                    },
+                    onSwipe: (statuspump) {},
+                  ),
                 ),
                 NumberPicker(
                   value: secound_out,

@@ -51,17 +51,15 @@ class _Page2State extends State<Page2> {
     });
   }
 
-  void _toggleon() {
+  void pumpButton() {
     setState(() {
-      statuspump = 'ON';
-      databaseRef.child('farmapp/mushroom').update({'pump': 1});
-    });
-  }
-
-  void _toggleoff() {
-    setState(() {
-      statuspump = 'OFF';
-      databaseRef.child('farmapp/mushroom').update({'pump': 0});
+      pump_mush = !pump_mush;
+      databaseRef.child('farmapp/mushroom').update({'pump': pump_mush});
+      if (pump_mush == true) {
+        statuspump = 'ON';
+      } else {
+        statuspump = 'OFF';
+      }
     });
   }
 
@@ -210,31 +208,27 @@ class _Page2State extends State<Page2> {
                 SizedBox(
                   height: 30,
                 ),
-                LiteRollingSwitch(
-                  value: widget.pump_mush,
-                  textOn: "ON",
-                  textOff: "OFF",
-                  colorOff: Colors.red,
-                  colorOn: Colors.green,
-                  iconOn: Icons.done,
-                  iconOff: Icons.do_disturb_off_outlined,
-                  textSize: 18,
-                  onChanged: (statuspump) {},
-                  onDoubleTap: (bool positon) {},
-                  onTap: () {
-                    setState(() {
-                      pump_mush = !pump_mush;
-                      databaseRef
-                          .child('farmapp/mushroom')
-                          .update({'pump': pump_mush});
-                      if (pump_mush == true) {
-                        statuspump = 'ON';
-                      } else {
-                        statuspump = 'OFF';
-                      }
-                    });
-                  },
-                  onSwipe: (statuspump) {},
+                Visibility(
+                  visible: !auto_mush,
+                  maintainSize: true, //NEW
+                  maintainAnimation: true, //NEW
+                  maintainState: true, //NEW
+                  child: LiteRollingSwitch(
+                    value: widget.pump_mush,
+                    textOn: "ON",
+                    textOff: "OFF",
+                    colorOff: Colors.red,
+                    colorOn: Colors.green,
+                    iconOn: Icons.done,
+                    iconOff: Icons.do_disturb_off_outlined,
+                    textSize: 18,
+                    onChanged: (statuspump) {},
+                    onDoubleTap: (bool positon) {},
+                    onTap: () {
+                      pumpButton();
+                    },
+                    onSwipe: (statuspump) {},
+                  ),
                 ),
                 SizedBox(height: 10),
                 NumberPicker(

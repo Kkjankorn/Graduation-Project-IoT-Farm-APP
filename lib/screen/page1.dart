@@ -48,26 +48,32 @@ class _Page1State extends State<Page1> {
       minutes_out_stop = 0,
       store_soil = 0;
 
-  bool auto_veg = false, pump_veg = false, value = false;
+  bool auto_veg = false, pump_veg = false, value = false, pump_button = false;
 
   void autoButton() {
     setState(() {
       auto_veg = !auto_veg;
       databaseRef.child('farmapp/vegetable').update({'auto': auto_veg});
+      databaseRef.child('farmapp/vegetable').update({'pump': false});
+      if (pump_veg == true) {
+        setState(() {
+          pump_button = false;
+        });
+      } else {
+        pump_button = false;
+      }
     });
   }
 
-  void _toggleon() {
+  void pumpButton() {
     setState(() {
-      statuspump = 'ON';
-      databaseRef.child('farmapp/vegetable').update({'pump': 1});
-    });
-  }
-
-  void _toggleoff() {
-    setState(() {
-      statuspump = 'OFF';
-      databaseRef.child('farmapp/vegetable').update({'pump': 0});
+      pump_veg = !pump_veg;
+      databaseRef.child('farmapp/vegetable').update({'pump': pump_veg});
+      if (pump_veg == true) {
+        statuspump = 'ON';
+      } else {
+        statuspump = 'OFF';
+      }
     });
   }
 
@@ -298,31 +304,29 @@ class _Page1State extends State<Page1> {
                     SizedBox(
                       height: 20,
                     ),
-                    LiteRollingSwitch(
-                      value: widget.pump_veg,
-                      textOn: "ON",
-                      textOff: "OFF",
-                      colorOff: Colors.red,
-                      colorOn: Colors.green,
-                      iconOn: Icons.done,
-                      iconOff: Icons.do_disturb_off_outlined,
-                      textSize: 18,
-                      onChanged: (statusPump) async {},
-                      onDoubleTap: (bool positon) {},
-                      onTap: () {
-                        setState(() {
-                          pump_veg = !pump_veg;
-                          databaseRef
-                              .child('farmapp/vegetable')
-                              .update({'pump': pump_veg});
-                          if (pump_veg == true) {
-                            statuspump = 'ON';
-                          } else {
-                            statuspump = 'OFF';
-                          }
-                        });
-                      },
-                      onSwipe: (bool positon) {},
+                    Visibility(
+                      visible: !auto_veg,
+                      maintainSize: true,
+                      maintainAnimation: true,
+                      maintainState: true,
+                      child: LiteRollingSwitch(
+                        value: pump_button,
+                        textOn: "ON",
+                        textOff: "OFF",
+                        colorOff: Colors.red,
+                        colorOn: Colors.green,
+                        iconOn: Icons.done,
+                        iconOff: Icons.do_disturb_off_outlined,
+                        textSize: 18,
+                        onChanged: (statusPump) async {},
+                        onDoubleTap: (bool positon) {},
+                        onTap: () {
+                          setState(() {
+                            pumpButton();
+                          });
+                        },
+                        onSwipe: (bool positon) {},
+                      ),
                     ),
                     SizedBox(
                       height: 20,
