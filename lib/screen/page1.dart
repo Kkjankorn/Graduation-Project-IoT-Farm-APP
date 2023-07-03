@@ -218,8 +218,8 @@ class _Page1State extends State<Page1> {
                         SizedBox(height: 50),
                         LiteRollingSwitch(
                           value: widget.auto_veg,
-                          textOn: "ON",
-                          textOff: "OFF",
+                          textOn: "Auto",
+                          textOff: "Manual",
                           colorOff: Colors.red,
                           colorOn: Colors.green,
                           iconOn: Icons.done,
@@ -290,11 +290,14 @@ class _Page1State extends State<Page1> {
                     Text(
                       'การทำงานปั๊มน้ำ : $statuspump',
                       style: const TextStyle(
-                          fontSize: 30.0,
-                          color: Color.fromARGB(255, 214, 50, 44)),
+                          fontSize: 30.0, color: Color.fromARGB(255, 0, 0, 0)),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 10,
+                    ),
+                    const Text('รดน้ำแปลงผัก', style: TextStyle(fontSize: 20)),
+                    SizedBox(
+                      height: 10,
                     ),
                     Visibility(
                       visible: !auto_veg,
@@ -348,7 +351,8 @@ class _Page1State extends State<Page1> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Text('ค่าความชื้นที่ผู้ใช้ตั้งค่า ${setsoil}'),
+                        Text('ค่าความชื้นที่ผู้ใช้ตั้งค่า ${setsoil}',
+                            style: TextStyle(fontSize: 20)),
                       ],
                     ),
                     SizedBox(

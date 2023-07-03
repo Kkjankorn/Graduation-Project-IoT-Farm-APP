@@ -147,8 +147,8 @@ class _Page3State extends State<Page3> {
                     SizedBox(height: 50),
                     LiteRollingSwitch(
                       value: widget.auto_chic,
-                      textOn: "ON",
-                      textOff: "OFF",
+                      textOn: "Auto",
+                      textOff: "Manual",
                       colorOff: Colors.red,
                       colorOn: Colors.green,
                       iconOn: Icons.done,
@@ -246,10 +246,15 @@ class _Page3State extends State<Page3> {
                 Text(
                   'มอเตอร์ปล่อยอาหาร : $statuspump',
                   style: const TextStyle(
-                      fontSize: 30.0, color: Color.fromARGB(255, 214, 50, 44)),
+                      fontSize: 30.0, color: Color.fromARGB(255, 0, 0, 0)),
                 ),
                 SizedBox(
-                  height: 30,
+                  height: 10,
+                ),
+                const Text('ให้อาหารโรงเลี้ยงไก่',
+                    style: TextStyle(fontSize: 20)),
+                SizedBox(
+                  height: 10,
                 ),
                 Visibility(
                   visible: !auto_chic,
