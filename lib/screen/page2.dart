@@ -201,7 +201,7 @@ class _Page2State extends State<Page2> {
                       ])
                 ]),
                 Text(
-                  'การทำงานระบบ : $statuspump',
+                  'การทำงานปั๊มพ่นหมอก : $statuspump',
                   style: const TextStyle(
                       fontSize: 30.0, color: Color.fromARGB(255, 214, 50, 44)),
                 ),

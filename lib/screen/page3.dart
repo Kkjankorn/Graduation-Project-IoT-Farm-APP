@@ -245,7 +245,7 @@ class _Page3State extends State<Page3> {
                   height: 10,
                 ),
                 Text(
-                  'การทำงานระบบ : $statuspump',
+                  'มอเตอร์ปล่อยอาหาร : $statuspump',
                   style: const TextStyle(
                       fontSize: 30.0, color: Color.fromARGB(255, 214, 50, 44)),
                 ),

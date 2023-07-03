@@ -288,7 +288,7 @@ class _Page1State extends State<Page1> {
                           ])
                     ]),
                     Text(
-                      'การทำงานระบบ : $statuspump',
+                      'การทำงานปั๊มน้ำ : $statuspump',
                       style: const TextStyle(
                           fontSize: 30.0,
                           color: Color.fromARGB(255, 214, 50, 44)),
