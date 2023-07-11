@@ -263,7 +263,7 @@ class _Page1State extends State<Page1> {
                             RangePointer(
                                 value: a.toDouble(),
                                 width: 20,
-                                color: Color.fromARGB(255, 14, 158, 14),
+                                color: Color.fromARGB(255, 31, 230, 31),
                                 enableAnimation: true,
                                 cornerStyle: CornerStyle.bothCurve)
                           ],

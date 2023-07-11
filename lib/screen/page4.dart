@@ -192,7 +192,7 @@ class _Page4State extends State<Page4> {
                         RangePointer(
                             value: b,
                             width: 20,
-                            color: Color.fromARGB(255, 14, 158, 14),
+                            color: Color.fromARGB(255, 17, 80, 199),
                             enableAnimation: true,
                             cornerStyle: CornerStyle.bothCurve)
                       ],
@@ -201,12 +201,12 @@ class _Page4State extends State<Page4> {
                             widget: Column(
                               children: <Widget>[
                                 Padding(
-                                  padding: EdgeInsets.all(130),
+                                  padding: EdgeInsets.all(100),
                                   child: Text(
-                                    'ระยะเวลาการให้อาหาร $secound_in วินาที',
+                                    'ให้อาหารปลา $secound_in วินาที',
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 19),
+                                        fontSize: 28),
                                     textAlign: TextAlign.center,
                                   ),
                                 )

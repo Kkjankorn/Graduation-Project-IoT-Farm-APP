@@ -179,7 +179,7 @@ class _Page2State extends State<Page2> {
                         RangePointer(
                             value: a,
                             width: 20,
-                            color: Color.fromARGB(255, 14, 158, 14),
+                            color: Color.fromARGB(255, 10, 131, 10),
                             enableAnimation: true,
                             cornerStyle: CornerStyle.bothCurve)
                       ],
@@ -204,7 +204,7 @@ class _Page2State extends State<Page2> {
                       ])
                 ]),
                 Text(
-                  'การทำงานปั๊มพ่นหมอก : $statuspump',
+                  'การทำงานปั๊มพ่นหมอก:$statuspump',
                   style: const TextStyle(
                       fontSize: 30.0, color: Color.fromARGB(255, 0, 0, 0)),
                 ),
