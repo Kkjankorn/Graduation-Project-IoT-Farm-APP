@@ -50,19 +50,14 @@ class _Page2State extends State<Page2> {
     setState(() {
       auto_mush = !auto_mush;
       databaseRef.child('farmapp/mushroom').update({'auto': auto_mush});
-      databaseRef.child('farmapp/mushroom').update({'pump': false});
+      databaseRef.child('farmapp/mushroom').update({'pumpn': false});
     });
   }
 
   void pumpButton() {
     setState(() {
       pump_mush = !pump_mush;
-      databaseRef.child('farmapp/mushroom').update({'pump': pump_mush});
-      if (pump_mush == true) {
-        statuspump = 'ON';
-      } else {
-        statuspump = 'OFF';
-      }
+      databaseRef.child('farmapp/mushroom').update({'pumpn': pump_mush});
     });
   }
 

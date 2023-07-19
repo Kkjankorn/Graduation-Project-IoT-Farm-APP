@@ -10,11 +10,8 @@ import 'package:flutter_time_picker_spinner/flutter_time_picker_spinner.dart';
 class Page1 extends StatefulWidget {
   final bool pump_veg, auto_veg;
 
-  Page1({
-    Key? key,
-    required this.pump_veg,
-    required this.auto_veg,
-  }) : super(key: key);
+  Page1({Key? key, required this.pump_veg, required this.auto_veg})
+      : super(key: key);
 
   @override
   State<Page1> createState() => _Page1State();
@@ -54,19 +51,14 @@ class _Page1State extends State<Page1> {
     setState(() {
       auto_veg = !auto_veg;
       databaseRef.child('farmapp/vegetable').update({'auto': auto_veg});
-      databaseRef.child('farmapp/vegetable').update({'pump': false});
+      databaseRef.child('farmapp/vegetable').update({'pumpn': false});
     });
   }
 
   void pumpButton() {
     setState(() {
       pump_veg = !pump_veg;
-      databaseRef.child('farmapp/vegetable').update({'pump': pump_veg});
-      if (pump_veg == true) {
-        statuspump = 'ON';
-      } else {
-        statuspump = 'OFF';
-      }
+      databaseRef.child('farmapp/vegetable').update({'pumpn': pump_veg});
     });
   }
 

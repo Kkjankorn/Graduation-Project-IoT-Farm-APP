@@ -39,19 +39,14 @@ class _Page3State extends State<Page3> {
     setState(() {
       auto_chic = !auto_chic;
       databaseRef.child('farmapp/chicken').update({'auto': auto_chic});
-      databaseRef.child('farmapp/chicken').update({'pump': false});
+      databaseRef.child('farmapp/chicken').update({'pumpn': false});
     });
   }
 
   void pumpButton() {
     setState(() {
       pump_chic = !pump_chic;
-      databaseRef.child('farmapp/chicken').update({'pump': pump_chic});
-      if (pump_chic == true) {
-        statuspump = 'ON';
-      } else {
-        statuspump = 'OFF';
-      }
+      databaseRef.child('farmapp/chicken').update({'pumpn': pump_chic});
     });
   }
 

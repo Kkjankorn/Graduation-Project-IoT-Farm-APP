@@ -52,19 +52,14 @@ class _Page4State extends State<Page4> {
     setState(() {
       auto_fish = !auto_fish;
       databaseRef.child('farmapp/fish').update({'auto': auto_fish});
-      databaseRef.child('farmapp/fish').update({'pump': false});
+      databaseRef.child('farmapp/fish').update({'pumpn': false});
     });
   }
 
   void pumpButton() {
     setState(() {
       pump_fish = !pump_fish;
-      databaseRef.child('farmapp/fish').update({'pump': pump_fish});
-      if (pump_fish == true) {
-        statuspump = 'ON';
-      } else {
-        statuspump = 'OFF';
-      }
+      databaseRef.child('farmapp/fish').update({'pumpn': pump_fish});
     });
   }
 

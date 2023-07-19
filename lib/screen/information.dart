@@ -77,7 +77,7 @@ class _InformationsState extends State<Informations> {
   }
 
   void getdata_pump_vegetable() {
-    databaseRef.child('farmapp/vegetable/pump').onValue.listen((event) {
+    databaseRef.child('farmapp/vegetable/pumpn').onValue.listen((event) {
       final Object? getdata_pump = event.snapshot.value;
       if (getdata_pump == true) {
         setState(() {
@@ -109,7 +109,7 @@ class _InformationsState extends State<Informations> {
   }
 
   void getdata_pump_mushroom() {
-    databaseRef.child('farmapp/mushroom/pump').onValue.listen((event) {
+    databaseRef.child('farmapp/mushroom/pumpn').onValue.listen((event) {
       final Object? getdata_pump = event.snapshot.value;
       if (getdata_pump == true) {
         setState(() {
@@ -141,7 +141,7 @@ class _InformationsState extends State<Informations> {
   }
 
   void getdata_pump_chicken() {
-    databaseRef.child('farmapp/chicken/pump').onValue.listen((event) {
+    databaseRef.child('farmapp/chicken/pumpn').onValue.listen((event) {
       final Object? getdata_pump = event.snapshot.value;
       if (getdata_pump == true) {
         setState(() {
@@ -173,7 +173,7 @@ class _InformationsState extends State<Informations> {
   }
 
   void getdata_pump_fish() {
-    databaseRef.child('farmapp/fish/pump').onValue.listen((event) {
+    databaseRef.child('farmapp/fish/pumpn').onValue.listen((event) {
       final Object? getdata_pump = event.snapshot.value;
       if (getdata_pump == true) {
         setState(() {
@@ -294,7 +294,9 @@ class _InformationsState extends State<Informations> {
                             context,
                             MaterialPageRoute(
                               builder: (context) => Page1(
-                                  pump_veg: _pump_veg, auto_veg: _auto_veg),
+                                auto_veg: _auto_veg,
+                                pump_veg: _pump_veg,
+                              ),
                             ));
                       },
                       splashColor: Color.fromARGB(255, 177, 202, 163),
@@ -509,11 +511,6 @@ class _InformationsState extends State<Informations> {
                               style: TextStyle(fontSize: 20),
                             ),
                             textColor: Color.fromARGB(255, 0, 0, 0),
-                            // trailing: Image.asset(
-                            //   'image/app_image/setting.png',
-                            //   height: 100,
-                            //   width: 100,
-                            // )
                           ),
                         ],
                       ),

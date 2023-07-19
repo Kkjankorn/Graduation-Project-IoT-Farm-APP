@@ -1,11 +1,6 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:farm_iot/colors/colors.dart';
 import 'package:farm_iot/screen/information.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:farm_iot/screen/page1.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
