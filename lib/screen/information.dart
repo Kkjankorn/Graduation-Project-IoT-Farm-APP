@@ -2,6 +2,7 @@ import 'package:farm_iot/screen/page1.dart';
 import 'package:farm_iot/screen/page2.dart';
 import 'package:farm_iot/screen/page3.dart';
 import 'package:farm_iot/screen/page4.dart';
+import 'package:farm_iot/screen/page5.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
@@ -18,12 +19,14 @@ class _InformationsState extends State<Informations> {
       temperature = '',
       time_chick = '',
       time_fish = '',
+      lux = '',
       vol = '',
       humidity = '',
       status_vegetable = '',
       status_mushroom = '',
       status_chicken = '',
       status_fish = '',
+      status_light = '',
       starth = '',
       startm = '',
       stoph = '',
@@ -36,7 +39,9 @@ class _InformationsState extends State<Informations> {
       _pump_chic = false,
       _auto_chic = false,
       _pump_fish = false,
-      _auto_fish = false;
+      _auto_fish = false,
+      _pump_light = false,
+      _auto_light = false;
 
   @override
   void initState() {
@@ -53,10 +58,13 @@ class _InformationsState extends State<Informations> {
     getdata_pump_chicken();
     getdata_auto_fish();
     getdata_pump_fish();
+    getdata_auto_light();
+    getdata_pump_light();
     getdata_starth();
     getdata_startm();
     getdata_stoph();
     getdata_stopm();
+    getdata_light();
   }
 
   void getdata_auto_vegetable() {
@@ -187,6 +195,38 @@ class _InformationsState extends State<Informations> {
     });
   }
 
+  void getdata_auto_light() {
+    databaseRef.child('farmapp/light/auto').onValue.listen((event) {
+      final Object? getdata_pump = event.snapshot.value;
+      if (getdata_pump == true) {
+        setState(() {
+          _auto_light = true;
+          status_light = "ON";
+        });
+      } else {
+        setState(() {
+          _auto_light = false;
+          status_light = "OFF";
+        });
+      }
+    });
+  }
+
+  void getdata_pump_light() {
+    databaseRef.child('farmapp/light/pumpn').onValue.listen((event) {
+      final Object? getdata_pump = event.snapshot.value;
+      if (getdata_pump == true) {
+        setState(() {
+          _pump_light = true;
+        });
+      } else {
+        setState(() {
+          _pump_light = false;
+        });
+      }
+    });
+  }
+
   void getdata_starth() {
     databaseRef.child('farmapp/vegetable/starth').onValue.listen((event) {
       final Object? getdata_soil = event.snapshot.value;
@@ -255,6 +295,15 @@ class _InformationsState extends State<Informations> {
       final Object? getdata = event.snapshot.value;
       setState(() {
         time_fish = '$getdata';
+      });
+    });
+  }
+
+  void getdata_light() {
+    databaseRef.child('farmapp/light/setlux').onValue.listen((event) {
+      final Object? getdata = event.snapshot.value;
+      setState(() {
+        lux = '$getdata';
       });
     });
   }
@@ -507,6 +556,66 @@ class _InformationsState extends State<Informations> {
                           ListTile(
                             title: Text(
                               'ระบบอัตโนมัติ : $status_fish',
+                              textAlign: TextAlign.start,
+                              style: TextStyle(fontSize: 20),
+                            ),
+                            textColor: Color.fromARGB(255, 0, 0, 0),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 10),
+              Container(
+                width: 500,
+                height: 230,
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      Color.fromARGB(255, 247, 241, 46),
+                      Color.fromARGB(255, 249, 150, 101)
+                    ],
+                  ),
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                ),
+                child: Column(
+                  children: [
+                    InkWell(
+                      onDoubleTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Page5(
+                                  pump_light: _pump_light,
+                                  auto_light: _auto_light),
+                            ));
+                      },
+                      splashColor: Color.fromARGB(255, 190, 172, 135),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        children: <Widget>[
+                          ListTile(
+                            leading: Image.asset('image/app_image/led.png'),
+                            title: Text(
+                              'ระบบแสงสว่าง',
+                              style: TextStyle(fontSize: 30),
+                            ),
+                            textColor: Color.fromARGB(255, 0, 0, 0),
+                          ),
+                          ListTile(
+                            title: Text(
+                              'ค่าแสงที่ตั้งค่า : $lux Lux',
+                              style: TextStyle(fontSize: 20),
+                            ),
+                            textColor: Color.fromARGB(255, 0, 0, 0),
+                          ),
+                          ListTile(
+                            title: Text(
+                              'ระบบอัตโนมัติ : $status_light',
                               textAlign: TextAlign.start,
                               style: TextStyle(fontSize: 20),
                             ),

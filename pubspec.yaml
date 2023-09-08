@@ -82,6 +82,8 @@ flutter:
     - image/app_image/mushroom.png
     - image/app_image/chicken.png
     - image/app_image/fish.png
+    - image/app_image/led.png
+    - image/app_image/led_off.png
     
 
   # An image asset can refer to one or more resolution-specific "variants", see
