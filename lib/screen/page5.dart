@@ -127,7 +127,7 @@ class _Page5State extends State<Page5> {
     var a = double.parse(lux_sensor, (source) => -1);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ระบบบ่อเลี้ยงปลา'),
+        title: const Text('ระบบแสงสว่างในฟาร์ม'),
       ),
       body: Center(
         child: SingleChildScrollView(
