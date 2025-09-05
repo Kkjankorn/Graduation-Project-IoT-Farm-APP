@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
             height: 5,
           ),
           const Text(
-            'ระบบเกษตรอัจฉริยะ',
+            'ระบบเกษตรอัจฉริยะ Version 9.05.68',
             textAlign: TextAlign.center,
             style: TextStyle(
                 color: Color.fromARGB(164, 34, 15, 204), fontSize: 30),
